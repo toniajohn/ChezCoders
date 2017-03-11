@@ -1,0 +1,403 @@
+<html>
+    
+   <head>
+       
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+        <title>jQuery</title>
+
+        <script type= "text/javascript" src="jquery-3.1.1.min.js"></script>
+       
+       <script src="jquery-ui-1/jquery-ui.js"></script>
+
+       
+       <link href="jquery-ui-1/jquery-ui.css" rel="stylesheet">
+       
+       <style type="text/css">
+           
+          #sortable { 
+                list-style-type:none;
+               
+                padding: 0; 
+                width: 60%; 
+           }
+            #sortable li {
+                margin: 0 3px 3px 3px; 
+                padding: 0.4em; 
+                padding-left: 1.5em; 
+                font-size: 1.4em; 
+                height: 18px; 
+           }
+           #sortableDiv{
+               
+               margin: 0 10px;
+           }
+           
+          #top{
+              
+              height: 75px;
+              background-color: #fffffa;
+              
+          }
+          h1{
+              
+              float: left;
+              color:#FA0000;
+              margin-right: 5px;
+          }
+          img{
+              
+              float:left;
+              height: 70px;
+              color: aqua;
+          }
+          #top a{
+              
+              text-decoration: none;
+              position: relative;
+              top: 30px;
+              margin-left: 10px;
+              color:#009AA6;
+              font-weight:bold;
+              font-size: 110%;
+              
+          }
+          .top-section{
+              
+              float: right;
+              position: relative;
+              top: 5px;
+          }
+          .top-section #search-box{
+              
+              height: 25px;
+              float: left;
+              position: relative;
+              top:10px;
+          }
+          .top-section #search-logo{
+              
+              float: left;
+              position: relative;
+              top:8px;
+              
+              
+          }
+          #content{
+              
+              clear: both;
+          }
+          
+          .toggler { 
+              width: 500px; 
+              height: 200px;
+              position: relative; 
+          }
+          #button { 
+              padding: .5em 1em; 
+              text-decoration:none;
+           }
+          #effect { 
+              width: 240px; 
+              height: 170px; 
+              padding: 0.4em; 
+              position: relative;
+              background: #fff; 
+           }
+          #effect h3 { 
+              margin: 0; 
+              padding: 0.4em; 
+              text-align: center; 
+           }
+           #accordion{
+               
+               width:450px;
+               float:left;
+               margin:0;
+               
+               
+           }
+           .fadeBox{
+               
+               height: 100px;
+               width: 100px;
+               border-radius: 50%;
+               margin: 8px;  
+               
+           }
+           #div1{
+               
+               background-color: black;
+               display: none;
+           }
+           #div2{
+               
+               background-color: aquamarine;
+               display: none;
+               
+           }
+           #div3{
+               
+               
+               display: none;
+               background-color: aqua;
+           }
+           #right{
+               
+               float: left;
+           }
+           #sortableDiv{
+               
+               float:left;
+               margin-left: 20px;
+               width: 180px;
+              background-image: url(images/smile.png);
+               
+               
+           }
+           #toggle{
+               
+               clear: both;
+           }
+           #animationDiv{
+               
+               position: relative;
+               background-image: url(images/tree.jpeg);
+               height: 200px;
+               width:300px;
+               left: -350px;
+               top: -3px;
+               
+           }
+           #animation{
+                position:relative;
+                top: 10px;
+               bottom: 20px;
+               
+           }
+           .clear{
+               clear:both;
+               
+               
+           }
+           #lineOne{
+               
+              
+               margin: 5px;
+               padding: 5px;
+               color:azure;
+                font-weight:bold;
+               
+           }
+           #lineTwo{
+               
+            
+               margin: 5px;
+               padding: 5px;
+               color:azure;
+               font-weight:bold;
+           }
+           
+            
+       
+       </style>
+   </head> 
+    
+    
+    <body>
+        
+        
+        <div id="top" >
+            
+            <img src="images/logo1.png">
+            
+            <h1>Code Central</h1>
+            
+            <a href="#">Learn</a>
+            <a href="#">Prices</a>
+            <a href="#">About Us</a>
+            
+            <div class="top-section">
+            
+                <input id="search-box" type="text"  placeholder="search">
+                
+                <input type="image" id="search-logo" src="images/search.png">
+            
+            </div>
+        
+        
+        </div>
+        
+        <div id="content">
+            
+            
+
+            <div id="accordion">
+
+                <h3>html</h3>
+                <div>
+                    <p>HTML is the most basic prt of any website.</p>
+                    <ul>
+
+                        <li>the title of the page</li>
+                        <li>the body content</li>
+                        <li>the written parts</li>
+                        <p>and more</p>
+
+
+                    </ul>
+
+
+
+                </div>
+                <h3>css</h3>
+                <div>
+
+                    <p>css is the style of the website</p>
+                    <p>It gives color and design to the webpage</p>
+                    <p> like putting clothes on html</p>
+
+
+                </div>
+                <h3>javascript</h3>
+                <div>
+
+                    <p>Javascript make your page interactive for the user</p>
+                    <p>It allows you to use functions to perform specific tasks</p>
+
+
+                </div>
+                
+                <button id="toggle">Toggle icons</button>
+
+
+
+
+            </div>
+           
+            <div id="sortableDiv">
+
+                
+
+                <ul id="sortable">
+                  <li>Item 1</li>
+                  <li>Item 3</li>
+                  <li>Item 4</li>
+                  <li>Item 5</li>
+                  <li>Item 6</li>
+                  <li>Item 7</li>
+                </ul>
+            </div>    
+            <div id="right">
+                <button id="fadeInButton">Click to fade in</button>
+
+                <div id="div1" class="fadeBox"></div>
+
+                <div id="div2" class="fadeBox"></div>
+
+                <div id="div3" class="fadeBox"></div>
+            </div> 
+            
+            <div class="clear"></div>
+            
+            
+                
+                <button id="animation" class="clear">Start Animation</button>
+                    
+                <div id="animationDiv" class="clear">
+
+                <p id="lineOne">By default, all HTML elements have a static position, and cannot be moved. To manipulate the position, remember to first set the CSS position property of the element to relative, fixed, or absolute!</p>
+                    
+                <p id="lineTwo" >hnls lnkmkeal lnqdkm  kn mas klnklnwdsnsknnkldsnlnlnkasmlnkdlxn nlkdalkn klnasn lkn aslknda slknec slnla.</p>    
+
+              
+            
+            
+            </div>
+            
+        </div>    
+        
+
+
+         
+           
+        
+       
+    
+      
+        
+        <script type="text/javascript">
+            
+            
+            //$(function(){
+            
+            $( function() {
+                    var icons = {
+                        header: "ui-icon-circle-arrow-e",
+                        activeHeader: "ui-icon-circle-arrow-s"
+                    };
+
+                    $("#accordion").accordion({
+                    
+                        collapsible: true,
+                    
+                        animate: 500,
+                    
+                        heightStyle: "auto",
+                    
+                        icons: {"header":  "ui-icon-plus", "activeHeader": "ui-icon-minus" }
+                    
+                    
+                    });
+                    $( "#toggle" ).button().on( "click",    function() {
+                          
+                        
+                        if ( $( "#accordion" ).accordion( "option", "icons" ) ) {
+                        $( "#accordion" ).accordion( "option", "icons", null );
+                        } else {
+                            $( "#accordion" ).accordion( "option", "icons", icons );
+                        }
+                    });
+                } );
+                
+            $( function() {
+                $( "#sortable" ).sortable();
+
+              } );
+            
+            
+            $(document).ready(function(){
+                $("#fadeInButton").click(function(){
+                    $("#div1").fadeToggle(1000);
+                    $("#div2").fadeToggle(2000);
+                    $("#div3").fadeToggle(3000);
+                });
+            });
+            $(document).ready(function(){
+                $("#animation").click(function(){
+                    
+                    $("#animationDiv").animate({left: "150px"});
+                    
+                });
+                
+            });
+            
+            
+
+           
+            
+             
+           
+            
+             
+        
+        </script>
+    
+    </body>
+    
+
+        
+
+
+</html>
